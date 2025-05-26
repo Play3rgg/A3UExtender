@@ -593,5 +593,345 @@ class Templates
         file = "CUP_AI_EST";
     };
 
+
+    // REB - RIV - CIV just to fix weird errors
+
+    // CUP
+
+    class CUP_TKM : CUP_Base
+    {
+        side = "Reb";
+        flagTexture = "\CUP\BaseConfigs\CUP_BaseConfigs\data\Flags\flag_tka_co.paa";
+        name = "CUP TKM";
+        file = "CUP_Reb_TKM";
+    };
+    class CUP_Reb : CUP_Base
+    {
+        side = "Reb";
+        flagTexture = "cup\baseconfigs\cup_baseconfigs\data\flags\flag_napa_co.paa";
+        name = "CUP NAPA";
+        file = "CUP_Reb_NAPA";
+        description = $STR_A3AP_setupFactionsTab_napa_3cbf;
+    };
+    class CUP_Reb_EM : CUP_Reb
+    {
+        name = "Eastern Loyalists";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_soviet_co.paa);
+        file = "CUP_Reb_EM";
+        description = "A generic militarized militia using surplus or outdated Soviet technology. Loyal to the East. Consider this a more forgiving start than most.";
+    };
+    class CUP_Reb_WM : CUP_Reb
+    {
+        name = "Western Loyalists";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_nato_co.paa);
+        file = "CUP_Reb_WM";
+        description = "A generic militarized militia using surplus or outdated NATO technology. Loyal to the West. Consider this a more forgiving start than most.";
+    };
+    class CUP_TKC : CUP_Base
+    {
+        side = "Civ";
+        flagTexture = "\CUP\BaseConfigs\CUP_BaseConfigs\data\Flags\flag_tka_co.paa";
+        name = "CUP TKC";
+        file = "CUP_Civ_TKC";
+    };
+    class CUP_Civ : CUP_Base
+    {
+        side = "Civ";
+        flagTexture = "\CUP\BaseConfigs\CUP_BaseConfigs\data\Flags\flag_chernarus_co.paa";
+        name = "CUP CHC";
+        file = "CUP_Civ_CHC";
+    };
+    class CUP_CHDKZ : CUP_Base
+    {
+        side = "Riv";
+        flagTexture = "\CUP\BaseConfigs\CUP_BaseConfigs\data\Flags\flag_chdkz_co.paa";
+        name = "CUP CHDKZ";
+        file = "CUP_Riv_CHDKZ";
+        description = $STR_A3AP_setupFactionsTab_chdkz;
+    };
+    class CUP_LRI : CUP_Base
+    {
+        side = "Reb";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\flag_LRI_co.paa);
+        name = "CUP LRI";
+        file = "CUP_Reb_LRI";
+        description = $STR_A3AP_setupFactionsTab_CUP_LRI;
+    };
+
+    // RHS
+
+    class RHS_Civ : RHS_Base
+    {
+        side = "Civ";
+        flagTexture = "a3\data_f\flags\flag_fia_co.paa";
+        logo = "rhsgref\addons\rhsgref_main\data\rhs_logo_ca.paa";
+        name = "RHS";
+        file = "RHS_Civ";
+    };
+
+    // Aegis 
+
+    class Aegis_Base : Base
+    {
+        requiredAddons[] = {"Weapons_1_F_lxWS","A3_Aegis_Armor_F_Aegis_APC_Tracked_02", "A3_Atlas_Armor_F_Atlas_APC_Tracked_02", "A3_Opf_Armor_F_Opf_APC_Tracked_02"};
+        logo = "A3_Aegis\data_f_aegis\logos\arma3_aegis_logo_ca.paa";
+        basepath = QPATHTOFOLDER(Templates\Aegis); //the path to the template folder
+        priority = 20;
+        equipFlags[] = {"vanilla"};
+    };
+
+    class Aegis_AUKUS_Arid : Aegis_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\Data_F\Flags\flag_uk_CO.paa";
+        name = "Aegis AUKUS Arid";
+        file = "Aegis_AI_AUKUS_Arid";
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_aegis_aukus;
+    };
+    class Aegis_AUKUS_Temperate : Aegis_AUKUS_Arid
+    {
+        name = "Aegis AUKUS Temperate";
+        file = "Aegis_AI_AUKUS_Temperate";
+        climate[] = {"temperate"};
+    };
+    class Aegis_AUKUS_Tropical : Aegis_AUKUS_Arid
+    {
+        name = "Aegis AUKUS Tropical";
+        file = "Aegis_AI_AUKUS_Tropical";
+        climate[] = {"tropical"};
+    };
+
+    class Aegis_AFRF_Arid : Aegis_Base
+    {
+        side = "Inv";
+        flagTexture = "\A3_Aegis\Data_F_Aegis\Flags\flag_RUS_CO.paa";
+        name = "Aegis AFRF Arid";
+        file = "Aegis_AI_AFRF_Arid";
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_aegis_afrf;
+    };
+
+    class Aegis_AFRF_Temperate : Aegis_Base
+    {
+        side = "Inv";
+        flagTexture = "\A3_Aegis\Data_F_Aegis\Flags\flag_RUS_CO.paa";
+        name = "Aegis AFRF Temperate";
+        file = "Aegis_AI_AFRF_Temperate";
+        climate[] = {"temperate"};
+        description = $STR_A3AP_setupFactionsTab_aegis_afrf;
+    };
+
+    class Aegis_AAF : Aegis_Base
+    {
+        side = "Occ";
+        flagTexture = "a3\data_f\flags\flag_aaf_co.paa";
+        name = "Aegis AAF";
+        file = "Aegis_AI_AAF";
+        maps[] = {"altis", "malden"};
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_aaf;
+    };
+
+    class Aegis_CSAT_Arid : Aegis_Base
+    {
+        side = "Inv";
+        flagTexture = "A3\Data_F\Flags\Flag_CSAT_CO.paa";
+        name = "Aegis CSAT Arid";
+        file = "Aegis_AI_CSAT_Arid";
+        climate[] = {"arid", "arctic"};
+        description = $STR_A3AP_setupFactionsTab_csat;
+    };
+    class Aegis_CSAT_Temperate : Aegis_CSAT_Arid
+    {
+        name = "Aegis CSAT Temperate";
+        file = "Aegis_AI_CSAT_Temperate";
+        climate[] = {"temperate"};
+    };
+
+    class Aegis_NATO_Arid : Aegis_Base
+    {
+        side = "Occ";
+        flagTexture = "\A3\Data_F\Flags\Flag_NATO_CO.paa";
+        name = "Aegis NATO Arid";
+        file = "Aegis_AI_NATO_Arid";
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_nato;
+    };
+    class Aegis_NATO_Temperate : Aegis_NATO_Arid
+    {
+        name = "Aegis NATO Temperate";
+        file = "Aegis_AI_NATO_Temperate";
+        climate[] = {"temperate"};
+    };
+    class Aegis_NATO_Tropical : Aegis_NATO_Arid
+    {
+        name = "Aegis NATO Tropical";
+        file = "Aegis_AI_NATO_Tropical";
+        climate[] = {"tropical"};
+    };
+
+    class Aegis_FIA : Aegis_Base
+    {
+        side = "Reb";
+        flagTexture = "a3\data_f\flags\flag_fia_co.paa";
+        name = "Aegis FIA";
+        file = "Aegis_Reb_FIA";
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_fia;
+    };
+
+    class Aegis_SDK : Aegis_Base
+    {
+        side = "Reb";
+        flagTexture = "\A3\Data_F_Exp\Flags\flag_SYND_CO.paa";
+        name = "Aegis SDK";
+        file = "Aegis_Reb_SDK";
+        climate[] = {"tropical"};
+        description = $STR_A3AP_setupFactionsTab_sdk;
+    };
+
+    class Aegis_LM : Aegis_Base
+    {
+        side = "Reb";
+        flagTexture = "\A3_Aegis\Data_F_Aegis\Flags\flag_Looters_CO.paa";
+        name = "Aegis LM";
+        file = "Aegis_Reb_LM";
+        climate[] = {"temperate"};
+        description = $STR_A3AP_setupFactionsTab_lm;
+    };
+
+    class Aegis_CHDKZ : Aegis_Base
+    {
+        side = "Riv";
+        flagTexture = "A3_Opf\Data_F_Opf\Flags\flag_ChDKZ_CO.paa";
+        name = "Aegis CHDKZ";
+        file = "Aegis_Riv_CHDKZ";
+        description = $STR_A3AP_setupFactionsTab_chdkz;
+    };
+
+    class Aegis_Ion : Aegis_Base
+    {
+        side = "Riv";
+        flagTexture = "A3_Aegis\Data_F_Aegis\Flags\flag_ION_CO.paa";
+        name = "Aegis Ion PMC";
+        file = "Aegis_Riv_Ion";
+        description = $STR_A3AP_setupFactionsTab_ion;
+    };
+
+    class Aegis_Civ : Aegis_Base
+    {
+        side = "Civ";
+        flagTexture = "\A3\Data_F\Flags\Flag_Altis_CO.paa";
+        name = "Aegis";
+        file = "Aegis_Civ";
+        description = $STR_A3AP_setupFactionsTab_vanilla_civ;
+    };
+
+    class 3CBF_FIA : 3CBF_Base
+    {
+        side = "Reb";
+        flagTexture = "a3\data_f\flags\flag_fia_co.paa";
+        name = "3CBF FIA";
+        file = "3CBF_Reb_FIA";
+        description = $STR_A3AP_setupFactionsTab_fia_3cbf;
+    };
+
+    class 3CBF_NAPA : 3CBF_Base
+    {
+        side = "Reb";
+        flagTexture = "\UK3CB_Factions\addons\UK3CB_Factions_NAP\Flag\nap_flag_co.paa";
+        name = "3CBF NAPA";
+        file = "3CBF_Reb_NAPA";
+        description = $STR_A3AP_setupFactionsTab_napa_3cbf;
+    };
+
+    class 3CBF_CCM : 3CBF_Base
+    {
+        side = "Reb";
+        flagTexture = "\UK3CB_Factions\addons\UK3CB_Factions_CCM\Flag\ccm_o_flag_co.paa";
+        name = "3CBF CCM";
+        file = "3CBF_Reb_CCM";
+        description = $STR_A3AP_setupFactionsTab_ccm_3cbf;
+    };
+
+    class 3CBF_TKM : 3CBF_Base
+    {
+        side = "Reb";
+        flagTexture = "uk3cb_factions\addons\uk3cb_factions_tkm\flag\tkm_b_flag_co.paa";
+        name = "3CBF TKM";
+        file = "3CBF_Reb_TKM";
+        maps[] = {"takistan", "SefrouRamal"};
+        description = $STR_A3AP_setupFactionsTab_tkm_3cbf;
+    };
+
+    class 3CBF_Reb_ION : 3CBF_CCM
+    {
+        flagTexture = "uk3cb_factions\addons\uk3cb_factions_ion\flag\ion_flag_co.paa";
+        name = "3CBF ION";
+        file = "3CBF_Reb_ION";
+        description = "";
+    };
+
+    class 3CBF_CHDKZ : 3CBF_Base
+    {
+        side = "Riv";
+        flagTexture = "\rhsgref\addons\rhsgref_main\data\flag_chdkz_co.paa";
+        name = "3CBF CHDKZ";
+        file = "3CBF_Riv_CHDKZ";
+        description = $STR_A3AP_setupFactionsTab_chdkz;
+    };
+
+    class 3CBF_CHDKZ_CW : 3CBF_CHDKZ
+    {
+        name = "3CBF CHDKZ (Cold War)";
+        file = "3CBF_Riv_CHDKZ_CW";
+        priority = 39;
+    };
+
+    class 3CBF_TI : 3CBF_Base
+    {
+        side = "Riv";
+        flagTexture = "\UK3CB_Factions\addons\UK3CB_Factions_TKC\Flag\tkc_flag_co.paa";
+        name = "3CBF TI";
+        file = "3CBF_Riv_TI";
+        maps[] = {"takistan", "SefrouRamal"};
+        climate[] = {"arid"};
+        description = $STR_A3AP_setupFactionsTab_ti;
+    };
+
+    class 3CBF_CHC : 3CBF_Base
+    {
+        side = "Civ";
+        flagTexture = "\UK3CB_Factions\addons\UK3CB_Factions_CHC\Flag\CHC_flag_co.paa";
+        name = "3CBF Eastern European";
+        file = "3CBF_Civ_CHC";
+        description = $STR_A3AP_setupFactionsTab_easterneuropean;
+        climate[] = {"temperate"};
+    };
+
+    class 3CBF_A : 3CBF_Base
+    {
+        side = "Civ";
+        flagTexture = "\UK3CB_Factions\addons\UK3CB_Factions_ADC\Flag\ADC_flag_co.paa";
+        name = "3CBF Arid";
+        file = "3CBF_Civ_A";
+        description = $STR_A3AP_setupFactionsTab_a;
+        climate[] = {"arid"};
+    };
+
+    class 3CBF_TKC: 3CBF_Base
+    {
+        side = "Civ";
+        flagTexture = "\UK3CB_Factions\addons\UK3CB_Factions_TKA\Flag\tka_flag_co.paa";
+        name = "3CBF Takistan";
+        file = "3CBF_Civ_TKC";
+        climate[] = {"arid"};
+        maps[] = {"takistan", "SefrouRamal"};
+        description = $STR_A3AP_setupFactionsTab_takistan;
+    };
+
+
+
 };
 
